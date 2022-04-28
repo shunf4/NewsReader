@@ -1,12 +1,16 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 23
-    buildToolsVersion "22.0.1"
+    compileSdkVersion 28
+    buildToolsVersion "28.0.2"
+    lintOptions {
+        abortOnError false
+    }
 
     defaultConfig {
         applicationId "org.random_access.newsreader"
         minSdkVersion 15
+        // noinspection ExpiredTargetSdkVersion
         targetSdkVersion 23
         versionCode 8
         versionName "1.0.6"
@@ -29,10 +33,10 @@ android {
 }
 
 dependencies {
-    compile fileTree(include: ['*.jar'], dir: 'libs')
-    compile 'com.android.support:appcompat-v7:23.1.1'
-    compile files('libs/commons-net-3.3.jar')
-    compile files('libs/commons-codec-1.10.jar')
-    compile files('libs/acra-4.6.2.jar')
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'com.android.support:appcompat-v7:23.1.1'
+    implementation files('libs/commons-net-3.3.jar')
+    implementation files('libs/commons-codec-1.10.jar')
+    implementation files('libs/acra-4.6.2.jar')
 }
 
